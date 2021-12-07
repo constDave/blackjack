@@ -30,7 +30,7 @@ def blackjack():
   for card in range(2):
     deal_card(players_hand)
     deal_card(computers_hand)
-    
+
   # build function to hit or stay so this behavior can be called multiple times
   def hit_or_stay():
     hit = input("Type 'y' to get another card, type 'n' to pass: ").lower()
@@ -53,6 +53,11 @@ def blackjack():
   def choose_winner():
     players_hand_total = sum(players_hand)
     computers_hand_total = sum(computers_hand)
+
+    if 11 in players_hand and sum(players_hand) > 21:
+      players_hand.remove(11)
+      players_hand.append(1)
+
     if players_hand_total > 21:
       print(f"You went over with {players_hand_total}. you lose - {players_hand}")
       return
