@@ -80,7 +80,7 @@ def blackjack():
 
   choose_winner()
 
-  play_again = input("\nWould you like to play another hand of Blackjack?")       
+  play_again = input("\nWould you like to play another hand of Blackjack? ")       
 
   if play_again == "y":
     clear()
